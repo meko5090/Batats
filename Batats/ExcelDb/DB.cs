@@ -5,9 +5,11 @@ namespace Batats.ExcelDb;
 
 public static class DB
 {
+
+    static string path = "C:\\Users\\mqassem\\source\\repos\\Batats\\Batats\\";
     private static string connectionString =
         //"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Db.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1;\"";
-        "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Db.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
+        $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={path}Db.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
 
     public static DataTable GetData(string query)
     {
@@ -31,6 +33,11 @@ public static class DB
         using (OleDbConnection connection = new OleDbConnection(connectionString))
         {
             connection.Open();
+
+            var dt = connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+
+            String[] excelSheets = new String[dt.Rows.Count];
+
             using (OleDbCommand command = new OleDbCommand(commandText, connection))
             {
                 command.ExecuteNonQuery();
