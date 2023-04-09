@@ -1,4 +1,4 @@
-using Batats.ExcelDb;
+﻿using Batats.ExcelDb;
 
 namespace Batats
 {
@@ -51,7 +51,8 @@ namespace Batats
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DB.ExecuteCommand($"insert into karta")
+            DB.ExecuteCommand($"INSERT INTO [Sheet1$] ([id],[farmer])  VALUES({0}, '{txtFarmer.Text}')");
+            MessageBox.Show("تمام");
         }
     }
 }

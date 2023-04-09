@@ -6,7 +6,8 @@ namespace Batats.ExcelDb;
 public static class DB
 {
     private static string connectionString =
-        "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Db.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1;\"";
+        //"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Db.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1;\"";
+        "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Db.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
 
     public static DataTable GetData(string query)
     {
