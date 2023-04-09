@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Batats
 {
-    public partial class Form2 : Form
+    public partial class frmPrice : Form
     {
-        public Form2()
+        public frmPrice()
         {
             InitializeComponent();
         }

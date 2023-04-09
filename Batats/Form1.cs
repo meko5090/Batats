@@ -44,6 +44,7 @@ public partial class Form1 : Form
         x.AddRange(DB.GetData("select [الفلاح] from [karta$]").Rows[0].ItemArray.Select(c=>c.ToString()).ToArray());
         txtFarmer.AutoCompleteCustomSource = x;
 
+        this.WindowState= FormWindowState.Maximized;
 
 
     }
@@ -95,5 +96,10 @@ public partial class Form1 : Form
             }
 
         }
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+        new frmPrice().ShowDialog();
     }
 }

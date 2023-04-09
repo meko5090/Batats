@@ -407,6 +407,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "سعر اليوم";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -418,7 +419,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "برنامج الكارته";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtScale)).EndInit();
