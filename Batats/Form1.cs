@@ -44,6 +44,8 @@ public partial class Form1 : Form
         x.AddRange(DB.GetData("select [الفلاح] from [karta$]").Rows[0].ItemArray.Select(c=>c.ToString()).ToArray());
         txtFarmer.AutoCompleteCustomSource = x;
 
+
+
     }
 
     private void numericUpDown1_ValueChanged(object sender, EventArgs e) { }
@@ -77,5 +79,21 @@ public partial class Form1 : Form
     {
 
         dataGridView1.DataSource = DB.GetData("select * from [karta$]");
+
+        dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        foreach (DataGridViewColumn item in dataGridView1.Columns)
+        {
+            if (item.Name == "الفلاح")
+            {
+                item.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                item.MinimumWidth = 200;
+            }
+            else
+            {
+                item.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            }
+
+        }
     }
 }
